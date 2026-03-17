@@ -265,7 +265,7 @@ function DetailPage({ variant, bike, onBack, onSwitchVariant, variantPassesFilte
                   const passes = variantPassesFilter ? variantPassesFilter(v) : true;
                   return (
                     <div key={v.id} onClick={() => !isSel && onSwitchVariant(v)}
-                      style={{ border: isSel ? "2px solid "+T.black : "1px solid "+T.lightGrey, borderRadius: 10, padding: "12px 14px", cursor: isSel ? "default" : "pointer", display: "flex", alignItems: "center", gap: 12, transition: "border-color 0.15s", opacity: passes ? 1 : 0.5 }}>
+                      style={{ border: isSel ? "2px solid "+T.black : "1px solid "+T.lightGrey, borderRadius: 10, padding: "12px 14px", cursor: isSel ? "default" : "pointer", display: "flex", alignItems: "center", gap: 12, transition: "border-color 0.15s" }}>
                       <div style={{ width: 16, height: 16, borderRadius: "50%", border: isSel ? "5px solid "+T.black : "1.5px solid "+T.midGrey, flexShrink: 0 }} />
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ fontFamily: T.fontB, fontSize: 13, fontWeight: 570, color: T.black, lineHeight: 1.3, marginBottom: 3 }}>{v.subtitle}</div>
@@ -277,7 +277,7 @@ function DetailPage({ variant, bike, onBack, onSwitchVariant, variantPassesFilte
                         ) : (
                           <span style={{ fontFamily: T.fontM, fontSize: 13, fontWeight: 700, color: isSel ? T.black : T.darkGrey, textTransform: "uppercase" }}>{fmt(v.price)} czk</span>
                         )}
-                        {!passes && <div style={{ fontFamily: T.fontB, fontSize: 10, color: T.midGrey, marginTop: 2, fontStyle: "italic" }}>Outside your price range</div>}
+                        {!passes && <div style={{ fontFamily: T.fontB, fontSize: 12, fontWeight: 400, color: T.midGrey, lineHeight: 1.4, marginTop: 6 }}>{"\u25cb"} Outside your price filter</div>}
                       </div>
                       {vSale && <span style={{ background: T.sale, color: T.white, fontFamily: T.fontM, fontSize: 9, padding: "2px 6px", borderRadius: 3, textTransform: "uppercase", letterSpacing: "0.04em", flexShrink: 0 }}>SALE</span>}
                     </div>
